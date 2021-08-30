@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import Header from './Header'
 import Todo from './Todo'
 
@@ -8,6 +9,8 @@ function Todos() {
         {id:'asfdaf-fdsfd', text: 'Đi mua đồ', isMarked: false},
         {id:'asfdaf-sdff', text: 'Đi mua đồ', isMarked: false}
     ]
+    const newTodos = useSelector(state => state.todos)
+    console.log('todos redux',newTodos)
     return (
         <div>
             <Header/>
