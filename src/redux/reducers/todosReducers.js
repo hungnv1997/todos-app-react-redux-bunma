@@ -5,7 +5,9 @@ const iState = [{id:'asfdaf-asfd', text: 'Đi mua đồ', isMarked: false},
 const todosReducer = (state=iState.length>0 && iState,action)=>{
     switch (action.type) {
         case 'ADD_TODO':
-            return state
+            const newTodo = {id: action.id, text: action.text, isMarked: false}
+            console.log('newTodo',newTodo)
+            return [...state,newTodo]
         case 'DELETE_TODO':
             return state
 

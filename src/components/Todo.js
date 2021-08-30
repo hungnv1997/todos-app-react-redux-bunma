@@ -11,8 +11,8 @@ function Todo(props) {
     return (
         <div>
             <div style = {{display:'flex', flexDirection:'row', alignItems:'center'}}>
-                <input type="checkbox" onChange={handleChecked}/>
-                <p>{todo.id}</p>
+                <input type="checkbox" onChange={handleChecked} />
+                <p >{todo.id}</p>
                 <button onClick={handleClickDelete}>DELETE</button>
             </div>
         </div>

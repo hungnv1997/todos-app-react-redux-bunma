@@ -1,19 +1,21 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { addTodo } from '../redux/actions/todosAction'
 import Header from './Header'
 import Todo from './Todo'
 
 function Todos() {
-    const todos = [
-        {id:'asfdaf-asfd', text: 'Đi mua đồ', isMarked: false},
-        {id:'asfdaf-fdsfd', text: 'Đi mua đồ', isMarked: false},
-        {id:'asfdaf-sdff', text: 'Đi mua đồ', isMarked: false}
-    ]
-    const newTodos = useSelector(state => state.todos)
-    console.log('todos redux',newTodos)
+   
+    const todos = useSelector(state => state.todos)
+    console.log('todos redux',todos)
+    const dispatch = useDispatch()
+    const addTodoProps = (text,id)=>{
+        console.log('connect addTodo from redux')
+        return dispatch(addTodo(text,id))
+    }
     return (
         <div>
-            <Header/>
+            <Header addTodo = {addTodoProps}/>
             {
                 todos.length>0&& todos.map(
                     todo => (
