@@ -10,7 +10,12 @@ const todosReducer = (state=iState.length>0 && iState,action)=>{
             return [...state,newTodo]
         case 'DELETE_TODO':
             return state
-
+        case 'MARK_TODO':
+            const newTodos = state.map(todo=>{
+                if(todo.id===action.id){return {...todo, isMarked:!todo.isMarked}}
+                else return todo
+            }) 
+            return newTodos
         default: return state
     }
 

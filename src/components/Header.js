@@ -6,7 +6,8 @@ function Header(props) {
         props.addTodo(text,id)
     };
     const id = uuid()
-    const handleClickAddBtn = ()=>{
+    const handleClickAddBtn = (e)=>{
+        e.preventDefault()
         addTodo(userInput,id);
         setUserInput('')
     }

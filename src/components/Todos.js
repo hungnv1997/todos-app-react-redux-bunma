@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addTodo } from '../redux/actions/todosAction'
+import { addTodo, markTodo } from '../redux/actions/todosAction'
 import Header from './Header'
 import Todo from './Todo'
 
@@ -13,6 +13,10 @@ function Todos() {
         console.log('connect addTodo from redux')
         return dispatch(addTodo(text,id))
     }
+    const markTodoProps = (id)=>{
+        console.log('connect addTodo from redux')
+        return dispatch(markTodo(id))
+    }
     return (
         <div>
             <Header addTodo = {addTodoProps}/>
@@ -22,6 +26,7 @@ function Todos() {
                         <Todo
                             key = {todo.id}
                             todo= {todo}
+                            markTodo = {markTodoProps}
                             
                         />
                     )
