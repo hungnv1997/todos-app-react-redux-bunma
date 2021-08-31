@@ -19,10 +19,12 @@ function Header(props) {
         setUserInput(e.target.value)
     }
     return (
-        <div>
-            <h1>Todos App</h1>
-            <input type="text" id="add-input" onChange={handleOnChangeInput} maxLength="10"/>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-4 mt-4" onClick={handleClickAddBtn}>Add</button>
+        <div  className='block header'>
+            <h1 className="is-size-1 has-text-centered block">Todos App</h1>
+            <div className=" block">
+            <input className="input block header__input" placeholder="...Add your todo" type="text" id="add-input" onChange={handleOnChangeInput} maxLength="15"/>
+            <button className="button is-primary  is-fullwidth" onClick={handleClickAddBtn}>Add</button>
+            </div>
         </div>
     )
 }

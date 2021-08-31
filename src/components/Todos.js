@@ -22,7 +22,7 @@ function Todos() {
         return dispatch(deleteTodo(id))
     }
     return (
-        <div>
+        <div className="todo-app box container  is-widescreen" >
             <Header addTodo = {addTodoProps}/>
             {
                 todos.length>0&& todos.map(

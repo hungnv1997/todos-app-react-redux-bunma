@@ -1,0 +1,27 @@
+body, html {
+  background-image: "#fff";
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.todo-app {
+  margin-top: 5rem;
+  width: 50%;
+}
+
+.todos__todo--checkbox {
+  margin-right: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .todo-app {
+    margin-top: 1rem;
+    width: 90%;
+  }
+  .todos__todo--checkbox {
+    margin-right: 1rem;
+  }
+}
+/*# sourceMappingURL=index.css.map */

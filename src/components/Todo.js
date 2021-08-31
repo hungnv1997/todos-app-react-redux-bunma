@@ -26,12 +26,12 @@ function Todo(props) {
         markTodo(todo.id)
     }
     return (
-        <div>
-            <div style = {{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
-                <input type="checkbox" onChange={handleChecked} />
-                <p style={(isMarked)?{textDecoration:'line-through'}:{textDecoration:'none'}}>{todo.text}</p>
-                <button onClick={handleClickDelete}>DELETE</button>
+        <div className = "block todos__todo is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center " >
+            <div  className="is-flex is-flex-direction-row is-justify-content-center is-align-items-center" >
+                <input className="todos__todo--checkbox" type="checkbox"  onChange={handleChecked} />
+                <p className="is-size-5 block" style={(isMarked)?{textDecoration:'line-through'}:{textDecoration:'none'}}>{todo.text}</p>
             </div>
+                <button className="button is-danger is-small" onClick={handleClickDelete}>DELETE</button>
         </div>
     )
 }

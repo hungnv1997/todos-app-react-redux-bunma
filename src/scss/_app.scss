@@ -1,0 +1,23 @@
+.todo-app{
+    margin-top: 5rem;
+    width: 50%;
+    
+}
+.todos{
+    &__todo
+        {
+           &--checkbox{
+            margin-right:2rem;
+           }
+        }
+}
+@media only screen and (max-width: 768px) {
+    .todo-app{
+        margin-top: 1rem;
+        width: 90%;
+        
+    }
+    .todos__todo--checkbox {
+        margin-right: 1rem;
+      }
+}
