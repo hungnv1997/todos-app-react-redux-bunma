@@ -6,6 +6,9 @@ function Todo(props) {
     const markTodo = (id)=>{
         props.markTodo(id)
     }
+    const deleteTodo = (id)=>{
+        props.deleteTodo(id)
+    }
     //State
     const [isMarked, setIsMarked] = useState(false)
     useEffect(() => { 
@@ -15,7 +18,8 @@ function Todo(props) {
     
     //Handle Func
     const handleClickDelete= ()=>{
-        console.log(todo.id);
+        console.log('todo.id');
+        deleteTodo(todo.id)
     }
     const handleChecked = ()=>{
         //console.log('checked',todo.id)
@@ -23,7 +27,7 @@ function Todo(props) {
     }
     return (
         <div>
-            <div style = {{display:'flex', flexDirection:'row', alignItems:'center'}}>
+            <div style = {{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
                 <input type="checkbox" onChange={handleChecked} />
                 <p style={(isMarked)?{textDecoration:'line-through'}:{textDecoration:'none'}}>{todo.text}</p>
                 <button onClick={handleClickDelete}>DELETE</button>

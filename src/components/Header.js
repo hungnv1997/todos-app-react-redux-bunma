@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { v4 as uuid } from 'uuid';
+
 function Header(props) {
     const [userInput, setUserInput] = useState('')
     const addTodo = (text,id)=>{
@@ -9,6 +10,8 @@ function Header(props) {
     const handleClickAddBtn = (e)=>{
         e.preventDefault()
         addTodo(userInput,id);
+        let inputValue = document.getElementById('add-input')
+        inputValue.value = ''
         setUserInput('')
     }
     const handleOnChangeInput =(e) => {
@@ -18,8 +21,8 @@ function Header(props) {
     return (
         <div>
             <h1>Todos App</h1>
-            <input type="text" onChange={handleOnChangeInput} maxLength="10"/>
-            <button onClick={handleClickAddBtn}>Add</button>
+            <input type="text" id="add-input" onChange={handleOnChangeInput} maxLength="10"/>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-4 mt-4" onClick={handleClickAddBtn}>Add</button>
         </div>
     )
 }
